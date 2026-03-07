@@ -1,5 +1,23 @@
-# Databricks notebook source
+"""
+Camada Silver - Limpeza e Padronização de Dados de Mercado
 
+Este notebook consome os dados da camada Bronze e aplica regras de
+qualidade e transformação para produzir um dataset mais confiável.
+
+Transformações aplicadas:
+- remoção de registros duplicados
+- validação de valores nulos
+- filtragem de preços inválidos
+- cálculo de métricas básicas como retorno diário e amplitude de preço
+
+O resultado é salvo como tabela Delta na camada Silver.
+
+Entrada:
+financial_market.bronze.alpha_vantage_daily
+
+Saída:
+financial_market.silver.alpha_vantage_daily_clean
+"""
 # COMMAND ----------
 from pyspark.sql import functions as F
 

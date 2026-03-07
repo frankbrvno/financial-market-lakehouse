@@ -1,4 +1,23 @@
-# Databricks notebook source
+"""
+Camada Bronze - Dados de Mercado Alpha Vantage
+
+Este notebook lê os dados brutos armazenados no S3 provenientes da API
+Alpha Vantage e transforma o JSON em um formato tabular estruturado.
+
+A transformação inclui:
+- extração das séries temporais diárias
+- conversão de tipos de dados
+- padronização de datas
+- inclusão de colunas técnicas de ingestão
+
+O resultado é salvo como tabela Delta na camada Bronze do Lakehouse.
+
+Entrada:
+S3 (raw) → dados JSON da API Alpha Vantage
+
+Saída:
+financial_market.bronze.alpha_vantage_daily
+"""
 
 # COMMAND ----------
 from pyspark.sql import functions as F
