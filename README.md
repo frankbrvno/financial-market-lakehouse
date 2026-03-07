@@ -36,26 +36,6 @@ Analytics / Dashboards
 
 ---
 
-# Estrutura do Projeto
-financial-market-lakehouse
-│
-├── notebooks
-│ ├── 01_bronze_alpha_vantage.py
-│ ├── 02_silver_alpha_vantage.py
-│ └── 03_gold_market_analytics.py
-│
-├── src
-│ └── ingestion
-│ ingest_market_data.py
-│
-├── configs
-├── requirements.txt
-├── README.md
-└── .gitignore
-
-
----
-
 # Camadas do Pipeline
 
 ## Bronze Layer
