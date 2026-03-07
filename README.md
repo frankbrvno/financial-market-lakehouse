@@ -20,8 +20,9 @@ Databricks Silver Layer
         ↓  
 Databricks Gold Layer  
         ↓  
-Analytics / Dashboards
-
+AWS S3 (analytics export)  
+        ↓  
+Amazon Athena
 ---
 
 # Tecnologias Utilizadas
@@ -33,6 +34,7 @@ Analytics / Dashboards
 - AWS S3
 - SQL
 - GitHub
+- Amazon Athena
 
 ---
 
