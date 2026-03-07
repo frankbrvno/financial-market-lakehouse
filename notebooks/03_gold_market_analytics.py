@@ -65,7 +65,6 @@ df_gold = (
 )
 
 # COMMAND ----------
-
 ranking_window = Window.partitionBy("price_date").orderBy(F.col("daily_return").desc())
 
 df_gold = df_gold.withColumn(
@@ -80,3 +79,8 @@ df_gold.write \
     .mode("overwrite") \
     .partitionBy("symbol") \
     .saveAsTable("financial_market.gold.market_analytics")
+
+gold_export_path = "s3://financial-market-lakehouse-bruno/gold/market_analytics_export/"
+df_gold.write \
+    .mode("overwrite") \
+    .parquet(gold_export_path)
