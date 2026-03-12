@@ -1,28 +1,17 @@
 # Financial Market Data Lakehouse
 
-Projeto de engenharia de dados end-to-end para ingestão, armazenamento e processamento de dados financeiros utilizando arquitetura Lakehouse com AWS S3, Databricks e Delta Lake.
-
-O pipeline consome dados da API Alpha Vantage, armazena dados brutos em um Data Lake na AWS e processa os dados utilizando a arquitetura Medallion (Bronze, Silver, Gold) no Databricks.
-
----
-
 # Arquitetura
 
-Alpha Vantage API  
-        ↓  
-Python Ingestion  
-        ↓  
-AWS S3 (Raw Data Lake)  
-        ↓  
-Databricks Bronze Layer  
-        ↓  
-Databricks Silver Layer  
-        ↓  
-Databricks Gold Layer  
-        ↓  
-AWS S3 (analytics export)  
-        ↓  
-Amazon Athena
+![Arquitetura do Pipeline](docs/diagrama.png)
+
+O pipeline coleta dados da API Alpha Vantage utilizando um script Python,
+armazenando os dados brutos no Amazon S3 (raw data lake).
+
+O processamento é realizado no Databricks utilizando a arquitetura
+Medallion (Bronze, Silver, Gold), gerando tabelas Delta para análise.
+
+A camada analítica final é exportada para o S3 e disponibilizada para
+consulta através do Amazon Athena.
 ---
 
 # Tecnologias Utilizadas
