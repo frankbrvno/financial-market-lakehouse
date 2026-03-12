@@ -12,6 +12,7 @@ Medallion (Bronze, Silver, Gold), gerando tabelas Delta para análise.
 
 A camada analítica final é exportada para o S3 e disponibilizada para
 consulta através do Amazon Athena.
+
 ---
 
 # Tecnologias Utilizadas
